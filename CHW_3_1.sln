@@ -2,9 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{882E4128-92A2-4507-9B2E-1E94999CC544}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{938A69C1-4D10-4312-A2DB-43323789333C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{938A69C1-4D10-4312-A2DB-43323789333C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B9427A26-98CF-4F3A-A2B4-8C843F11DA5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{C2394946-5F2C-4CE1-8573-65770DC52C8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +20,11 @@ Global
 		{938A69C1-4D10-4312-A2DB-43323789333C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{938A69C1-4D10-4312-A2DB-43323789333C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{938A69C1-4D10-4312-A2DB-43323789333C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9427A26-98CF-4F3A-A2B4-8C843F11DA5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9427A26-98CF-4F3A-A2B4-8C843F11DA5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9427A26-98CF-4F3A-A2B4-8C843F11DA5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9427A26-98CF-4F3A-A2B4-8C843F11DA5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2394946-5F2C-4CE1-8573-65770DC52C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2394946-5F2C-4CE1-8573-65770DC52C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2394946-5F2C-4CE1-8573-65770DC52C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2394946-5F2C-4CE1-8573-65770DC52C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal
