@@ -1,4 +1,5 @@
-﻿using Core.Enums;
+﻿using Application.Utils.UI;
+using Core.Enums;
 
 namespace Application.Utils.Handlers.ModeHandler;
 
@@ -6,7 +7,15 @@ public static class ReadModeHandler
 {
     public static ReadMode Get()
     {
-        // TODO
-        return ReadMode.Console;
+        try
+        {
+            // TODO
+            return ReadMode.Console;
+        }
+        catch (Exception e)
+        {
+            ConsoleWrapper.WriteLine(e.Message);
+            throw;
+        }
     }
 }

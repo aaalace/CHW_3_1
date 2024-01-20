@@ -8,5 +8,5 @@ public enum FormatMode
     Age,
     City,
     IsPremium,
-    PurchasesNumber
+    PurchasesAmount
 }

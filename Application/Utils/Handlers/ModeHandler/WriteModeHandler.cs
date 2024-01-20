@@ -1,4 +1,5 @@
-﻿using Core.Enums;
+﻿using Application.Utils.UI;
+using Core.Enums;
 
 namespace Application.Utils.Handlers.ModeHandler;
 
@@ -6,7 +7,15 @@ public static class WriteModeHandler
 {
     public static WriteMode Get()
     {
-        // TODO
-        return WriteMode.Rewrite;
+        try
+        {
+            // TODO
+            return WriteMode.Rewrite;
+        }
+        catch (Exception e)
+        {
+            ConsoleWrapper.WriteLine(e.Message);
+            throw;
+        }
     }
 }

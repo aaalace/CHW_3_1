@@ -1,5 +1,6 @@
 ﻿using Core.Enums;
 using Infrastructure.Models;
+using UI;
 
 namespace Infrastructure.Parsers;
 
@@ -7,14 +8,28 @@ public static class JsonParser
 {
     public static List<Customer> ReadJson(ReadMode mode)
     {
-        Console.WriteLine("ReadJson");
-        // TODO: ONLY reads and returns collection
-        return new List<Customer>();
+        try
+        {
+            // TODO: ONLY reads and returns collection
+            return new List<Customer>();
+        }
+        catch (Exception e)
+        {
+            ConsoleWrapper.WriteException(e);
+            throw;
+        }
     }
 
     public static void WriteJson(WriteMode mode, List<Customer> customerCollection)
     {
-        Console.WriteLine("WriteJson");
-        // TODO: ONLY writes collection
+        try
+        {
+            // TODO: ONLY writes collection
+        }
+        catch (Exception e)
+        {
+            ConsoleWrapper.WriteException(e);
+            throw;
+        }
     }
 }

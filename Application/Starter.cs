@@ -13,7 +13,8 @@ public static class Starter
         
         while (true)
         {
-            ConsoleWrapper.WriteLine("Choose menu option");
+            ConsoleWrapper.WriteLine("Choose menu option:");
+            ConsoleWrapper.WriteLine("read | filter | sort | write | exit");
             var menuOption = MenuOptionHandler.Get();
             if (menuOption == MenuOption.Exit) break;
             

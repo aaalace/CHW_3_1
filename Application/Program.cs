@@ -6,7 +6,6 @@ namespace Application;
 public static class Program
 {
     
-    // BUG: TRYCATCH!!!!!! (all exceptions are from Handlers or Parsers)
     // TODO: CustomExceptions
     public static void Main()
     {
