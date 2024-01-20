@@ -1,6 +1,8 @@
-﻿namespace Application.Utils.Handlers.Common;
+﻿using UI;
+
+namespace Application.Utils.Handlers.Common;
 
 public static class ContinueRunAppHandler
 {
-    public static bool Check() => Console.ReadKey(true).Key != ConsoleKey.Q;
+    public static bool Check() => ConsoleWrapper.GetKey() != ConsoleKey.Q;
 }

@@ -1,4 +1,4 @@
-﻿using Application.Utils.UI;
+﻿using UI;
 using Core.Enums;
 
 namespace Application.Utils.Handlers.MenuHandler;
@@ -7,24 +7,16 @@ public static class MenuOptionHandler
 {
     public static MenuOption Get()
     {
-        try
+        // TODO
+        var s = ConsoleWrapper.ReadLine();
+        return s switch
         {
-            // TODO
-            var s = Console.ReadLine();
-            return s switch
-            {
-                "read" => MenuOption.Read,
-                "filter" => MenuOption.Filter,
-                "sort" => MenuOption.Sort,
-                "write" => MenuOption.Write,
-                "exit" => MenuOption.Exit,
-                _ => throw new Exception()
-            };
-        }
-        catch (Exception e)
-        {
-            ConsoleWrapper.WriteLine(e.Message);
-            throw;
-        }
+            "read" => MenuOption.Read,
+            "filter" => MenuOption.Filter,
+            "sort" => MenuOption.Sort,
+            "write" => MenuOption.Write,
+            "exit" => MenuOption.Exit,
+            _ => throw new Exception()
+        };
     }
 }

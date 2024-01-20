@@ -1,12 +1,10 @@
 ﻿using Application.Utils.Handlers.Common;
-using Application.Utils.UI;
+using UI;
 
 namespace Application;
 
 public static class Program
 {
-    
-    // TODO: CustomExceptions
     public static void Main()
     {
         do

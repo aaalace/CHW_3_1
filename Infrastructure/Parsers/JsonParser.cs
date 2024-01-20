@@ -8,28 +8,12 @@ public static class JsonParser
 {
     public static List<Customer> ReadJson(ReadMode mode)
     {
-        try
-        {
-            // TODO: ONLY reads and returns collection
-            return new List<Customer>();
-        }
-        catch (Exception e)
-        {
-            ConsoleWrapper.WriteException(e);
-            throw;
-        }
+        // TODO: ONLY reads and returns collection
+        return new List<Customer>();
     }
 
     public static void WriteJson(WriteMode mode, List<Customer> customerCollection)
     {
-        try
-        {
-            // TODO: ONLY writes collection
-        }
-        catch (Exception e)
-        {
-            ConsoleWrapper.WriteException(e);
-            throw;
-        }
+        
     }
 }

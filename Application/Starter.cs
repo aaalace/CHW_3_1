@@ -1,6 +1,6 @@
 ﻿using Application.Controllers;
 using Application.Utils.Handlers.MenuHandler;
-using Application.Utils.UI;
+using UI;
 using Core.Enums;
 
 namespace Application;
