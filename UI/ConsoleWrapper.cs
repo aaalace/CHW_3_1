@@ -22,8 +22,7 @@ public static class ConsoleWrapper
     public static void WriteException(Exception exception)
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("<ERROR>");
-        Console.WriteLine(exception.Message);
+        Console.WriteLine("<ERROR> " + exception.Message);
         Console.ResetColor();
     }
 }

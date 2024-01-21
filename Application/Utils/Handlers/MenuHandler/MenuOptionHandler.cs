@@ -1,5 +1,6 @@
 ﻿using UI;
 using Core.Enums;
+using Core.Exceptions;
 
 namespace Application.Utils.Handlers.MenuHandler;
 
@@ -7,8 +8,9 @@ public static class MenuOptionHandler
 {
     public static MenuOption Get()
     {
-        // TODO
         var s = ConsoleWrapper.ReadLine();
+        if (s is null) throw new ArgumentNullException();
+        
         return s switch
         {
             "read" => MenuOption.Read,
@@ -16,7 +18,7 @@ public static class MenuOptionHandler
             "sort" => MenuOption.Sort,
             "write" => MenuOption.Write,
             "exit" => MenuOption.Exit,
-            _ => throw new Exception()
+            _ => throw new MenuChoiceException()
         };
     }
 }

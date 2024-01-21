@@ -7,9 +7,9 @@ public static class Program
 {
     public static void Main()
     {
+        ConsoleWrapper.WriteLine("Program started");
         do
         {
-            ConsoleWrapper.WriteLine("Program started");
             Starter.Run();
         } while (ContinueRunApp());
     }

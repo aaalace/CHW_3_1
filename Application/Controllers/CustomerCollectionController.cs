@@ -12,16 +12,16 @@ public class CustomerCollectionController : IDisposable
         switch (menuOption)
         {
             case MenuOption.Read:
-                _service.Read();
+                _service.ReadService();
                 break;
             case MenuOption.Filter:
-                _service.Filter();
+                _service.FilterService();
                 break;
             case MenuOption.Sort:
-                _service.Sort();
+                _service.SortService();
                 break;
             case MenuOption.Write:
-                _service.Write();
+                _service.WriteService();
                 break;
             case MenuOption.Exit:
             default:
