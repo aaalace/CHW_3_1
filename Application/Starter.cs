@@ -18,8 +18,8 @@ public static class Starter
             {
                 if (firstLaunch)
                 {
-                    firstLaunch = false;
                     _controller.Run(MenuOption.Read);
+                    firstLaunch = false;
                     continue;
                 }   
                 
@@ -36,5 +36,5 @@ public static class Starter
                 ConsoleWrapper.WriteException(e);
             }
         }
-    }
+    }   
 }

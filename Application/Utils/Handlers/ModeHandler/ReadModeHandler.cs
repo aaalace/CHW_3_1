@@ -1,5 +1,6 @@
 ﻿using Core.Enums;
 using UI;
+using Core.Exceptions;
 
 namespace Application.Utils.Handlers.ModeHandler;
 
@@ -15,7 +16,7 @@ public static class ReadModeHandler
         {
             "console" => ReadMode.Console,
             "file" => ReadMode.File,
-            _ => throw new Exception()
+            _ => throw new ReadModeException()
         };
     }
 }

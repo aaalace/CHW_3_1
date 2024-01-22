@@ -2,7 +2,7 @@
 using Application.Utils.Formatters;
 using Application.Utils.Handlers.ModeHandler;
 using Application.Utils.Handlers.ValueHandlers;
-using Infrastructure.Parsers;
+using Infrastructure.Parsers.Json;
 using UI;
 
 namespace Application.Services;

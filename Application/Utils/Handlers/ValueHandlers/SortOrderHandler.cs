@@ -1,5 +1,6 @@
 ﻿using Core.Enums;
 using UI;
+using Core.Exceptions;
 
 namespace Application.Utils.Handlers.ValueHandlers;
 
@@ -30,7 +31,7 @@ public static class SortOrderHandler
     private static SortOrder OrderHelper()
     {
         string? s = ConsoleWrapper.ReadLine();
-        if (s is null) throw new NullReferenceException();
+        if (s is null) throw new ArgumentNullException();
 
         return s switch
         {
@@ -40,7 +41,7 @@ public static class SortOrderHandler
             "za" => SortOrder.ZA,
             "true first" => SortOrder.TrueFirst,
             "false first" => SortOrder.FalseFirst,
-            _ => throw new Exception()
+            _ => throw new SortOrderException()
         };
     }
 }

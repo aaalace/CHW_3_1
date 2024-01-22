@@ -1,5 +1,6 @@
 ﻿using UI;
 using Core.Enums;
+using Core.Exceptions;
 
 namespace Application.Utils.Handlers.ModeHandler;
 
@@ -15,7 +16,7 @@ public static class WriteModeHandler
         {
             "rewrite" => WriteMode.Rewrite,
             "new file" => WriteMode.NewFile,
-            _ => throw new Exception()
+            _ => throw new WriteModeException()
         };
     }
 }

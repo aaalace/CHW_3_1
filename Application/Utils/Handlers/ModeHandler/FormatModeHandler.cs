@@ -1,5 +1,6 @@
 ﻿using UI;
 using Core.Enums;
+using Core.Exceptions;
 
 namespace Application.Utils.Handlers.ModeHandler;
 
@@ -20,7 +21,7 @@ public static class FormatModeHandler
             "city" => FormatMode.City,
             "is premium" => FormatMode.IsPremium,
             "purchases amount" => FormatMode.PurchasesAmount,
-            _ => throw new Exception()
+            _ => throw new FormatModeException()
         };
     }
 }
