@@ -2,7 +2,6 @@
 using Application.Utils.Handlers.MenuHandler;
 using UI;
 using Core.Enums;
-using Core.Exceptions;
 
 namespace Application;
 
@@ -12,30 +11,30 @@ public static class Starter
     {
         var _controller = new CustomerCollectionController();
         
+        bool firstLaunch = true;
         while (true)
         {
-            ConsoleWrapper.WriteLine("Choose menu option:");
-            ConsoleWrapper.WriteLine("read | filter | sort | write | exit");
-
-            MenuOption menuOption;
             try
             {
-                menuOption = MenuOptionHandler.Get();
+                if (firstLaunch)
+                {
+                    firstLaunch = false;
+                    _controller.Run(MenuOption.Read);
+                    continue;
+                }   
+                
+                ConsoleWrapper.WriteLine("Choose menu option:");
+                ConsoleWrapper.WriteLine("read | filter | sort | write | exit");
+                
+                var menuOption = MenuOptionHandler.Get();
+                if (menuOption == MenuOption.Exit) break;
+            
+                _controller.Run(menuOption);
             }
-            catch (ArgumentNullException e)
+            catch (Exception e)
             {
                 ConsoleWrapper.WriteException(e);
-                continue;
             }
-            catch (MenuChoiceException e)
-            {
-                ConsoleWrapper.WriteException(e);
-                continue;
-            }
-            
-            if (menuOption == MenuOption.Exit) break;
-            
-            _controller.Run(menuOption);
         }
     }
 }

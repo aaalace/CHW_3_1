@@ -1,5 +1,7 @@
 ﻿using Application.Data;
+using Application.Utils.Formatters;
 using Application.Utils.Handlers.ModeHandler;
+using Application.Utils.Handlers.ValueHandlers;
 using Infrastructure.Parsers;
 using UI;
 
@@ -12,8 +14,6 @@ public class CustomerCollectionService : IDisposable
     public void ReadService()
     {
         ConsoleWrapper.WriteLine("Choose read mode:");
-        ConsoleWrapper.WriteLine("console | file");
-        
         var mode = ReadModeHandler.Get();
         
         _collection.Data = JsonParser.ReadJson(mode);
@@ -22,36 +22,29 @@ public class CustomerCollectionService : IDisposable
     public void FilterService()
     {
         ConsoleWrapper.WriteLine("Choose filter field:");
-        ConsoleWrapper.WriteLine("id | name | email | age | city | isPremium | purchases amount");
-        
         var mode = FormatModeHandler.Get();
         
-        ConsoleWrapper.WriteLine("Choose filter value:");
-        // TODO: var value = FilterValueHandler.Get()
-        
-        // TODO: normal filtering by mode and value
-        // _collection.Data = _collection.Data.Where(customer => customer.id == 1).ToList();
+        ConsoleWrapper.WriteLine("Enter filter value:");
+        var value = FilterValueHandler.Get();
+
+        _collection.Data = FilterWS.Filter(_collection, mode, value);
     }
+    
     
     public void SortService()
     {
         ConsoleWrapper.WriteLine("Choose sort field:");
-        ConsoleWrapper.WriteLine("id | name | email | age | city | isPremium | purchases amount");
-        
         var mode = FormatModeHandler.Get();
         
         ConsoleWrapper.WriteLine("Choose sort order:");
-        // TODO: var order = SortOrderHandler.Get(mode)
-        
-        // TODO: normal sorting by mode and order
-        // _collection.Data = _collection.Data.OrderBy(customer => customer.id).ToList();
+        var order = SortOrderHandler.Get(mode);
+
+        _collection.Data = SortWS.Sort(_collection, mode, order);
     }
     
     public void WriteService()
     {
         ConsoleWrapper.WriteLine("Choose write mode:");
-        ConsoleWrapper.WriteLine("rewrite | new file");
-        
         var mode = WriteModeHandler.Get();
         
         JsonParser.WriteJson(mode, _collection.Data);

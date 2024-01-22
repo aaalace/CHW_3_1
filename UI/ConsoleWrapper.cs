@@ -9,7 +9,13 @@ public static class ConsoleWrapper
     
     public static string? ReadLine()
     {
+        Write("> ");
         return Console.ReadLine();
+    }
+
+    public static void Write(string s)
+    {
+        Console.Write(s);
     }
     
     public static void WriteLine(string value, ConsoleColor color = ConsoleColor.White)
