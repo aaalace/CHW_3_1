@@ -1,4 +1,4 @@
-﻿using Infrastructure.Models;
+﻿using Core.Models;
 
 namespace Application.Data;
 

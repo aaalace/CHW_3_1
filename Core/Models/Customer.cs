@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Models;
+﻿namespace Core.Models;
 
 public class Customer : IDisposable
 {

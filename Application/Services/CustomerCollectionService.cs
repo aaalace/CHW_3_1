@@ -10,13 +10,16 @@ namespace Application.Services;
 public class CustomerCollectionService : IDisposable
 {
     private readonly CustomerCollection _collection = new();
+    private string _initPath = string.Empty;
     
     public void ReadService()
     {
         ConsoleWrapper.WriteLine("Choose read mode:");
         var mode = ReadModeHandler.Get();
         
-        _collection.Data = JsonParser.ReadJson(mode);
+        _collection.Data = JsonParser.ReadJson(mode, ref _initPath);
+        
+        DataShower.Show(_collection.Data);
     }
     
     public void FilterService()
@@ -28,8 +31,9 @@ public class CustomerCollectionService : IDisposable
         var value = FilterValueHandler.Get();
 
         _collection.Data = FilterWS.Filter(_collection, mode, value);
+        
+        DataShower.Show(_collection.Data);
     }
-    
     
     public void SortService()
     {
@@ -40,6 +44,8 @@ public class CustomerCollectionService : IDisposable
         var order = SortOrderHandler.Get(mode);
 
         _collection.Data = SortWS.Sort(_collection, mode, order);
+        
+        DataShower.Show(_collection.Data);
     }
     
     public void WriteService()
@@ -47,7 +53,7 @@ public class CustomerCollectionService : IDisposable
         ConsoleWrapper.WriteLine("Choose write mode:");
         var mode = WriteModeHandler.Get();
         
-        JsonParser.WriteJson(mode, _collection.Data);
+        JsonParser.WriteJson(_collection.Data, mode, _initPath);
     }
     
     public void Dispose()

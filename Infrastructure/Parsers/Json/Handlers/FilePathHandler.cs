@@ -7,7 +7,7 @@ public static class FilePathHandler
     public static string Get()
     {
         string? s = ConsoleWrapper.ReadLine();
-        if (s is null) throw new Exception();
+        if (s is null) throw new ArgumentNullException();
 
         return s;
     }

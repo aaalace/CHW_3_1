@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Parsers.Json.Handlers;
+using UI;
 
 namespace Infrastructure.Parsers.Json.SourceInteractors;
 
@@ -8,25 +9,42 @@ public static class JsonReader
     {
         var lines = new List<string>();
         
-        
-        
-        return lines;
-    }
+        ConsoleWrapper.WriteLine("Enter /stop to stop placing lines of data");
 
-    public static List<string> ReadFromFile()
-    {
-        var lines = new List<string>();
-
-        var filePath = FilePathHandler.Get();
-        
-        using var reader = new StreamReader(filePath);
-        Console.SetIn(reader);
-        while (Console.ReadLine() is { } line)
+        string? line = ConsoleWrapper.ReadLine();
+        while (line != "/stop")
         {
-            string newLine = line.Replace("".PadRight(4, ' '), "\t");
-            lines.Add(newLine);
+            if (line is not null) lines.Add(line.Trim());
+            line = ConsoleWrapper.ReadLine();
         }
         
         return lines;
     }
+
+    public static List<string> ReadFromFile(ref string initPath)
+    {
+        var lines = new List<string>();
+        
+        ConsoleWrapper.WriteLine("Enter file path:");
+        var filePath = FilePathHandler.Get();
+        initPath = filePath;
+
+        var oldReader = Console.In;
+        var reader = new StreamReader(filePath);
+        Console.SetIn(reader);
+        
+        while (true)
+        {
+            string? line = Console.ReadLine();
+            if (line is null) break;
+            
+            lines.Add(line.Trim());
+        }
+        
+        Console.SetIn(oldReader);
+        
+        reader.Dispose();
+        
+        return lines;
+    }   
 }

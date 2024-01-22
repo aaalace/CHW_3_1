@@ -1,6 +1,6 @@
 ﻿using Application.Data;
 using Core.Enums;
-using Infrastructure.Models;
+using Core.Models;
 
 namespace Application.Utils.Formatters;
 
