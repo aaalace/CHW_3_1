@@ -1,4 +1,5 @@
-﻿using Infrastructure.Parsers.Json.Handlers;
+﻿using Core.Exceptions;
+using Infrastructure.Parsers.Json.Handlers;
 using UI;
 
 namespace Infrastructure.Parsers.Json.SourceInteractors;
@@ -23,6 +24,7 @@ public static class JsonReader
 
     public static List<string> ReadFromFile(ref string initPath)
     {
+        if (initPath == string.Empty) throw new EmptyPathException();
         var lines = new List<string>();
         
         ConsoleWrapper.WriteLine("Enter file path:");
