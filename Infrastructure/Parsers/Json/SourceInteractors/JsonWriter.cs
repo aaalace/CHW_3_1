@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Parsers.Json.Handlers;
 using UI;
+using Core.Exceptions;
 
 namespace Infrastructure.Parsers.Json.SourceInteractors;
 
@@ -7,6 +8,8 @@ public static class JsonWriter
 {
     public static void Rewrite(List<string> lines, in string initPath)
     {
+        if (initPath == string.Empty) throw new EmptyPathException();
+        
         var fileStream = new FileStream(initPath, FileMode.Open);
         fileStream.SetLength(0);
         fileStream.Dispose();

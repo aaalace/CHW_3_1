@@ -36,6 +36,6 @@ public static class JsonParser
                 break;
         }
         
-        ConsoleWrapper.WriteLine("Data saved");
+        ConsoleWrapper.WriteLine("Data saved", ConsoleColor.Green);
     }
 }
