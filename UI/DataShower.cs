@@ -4,6 +4,9 @@ namespace UI;
 
 public static class DataShower
 {
+    /// <summary>
+    /// Presents current data in collection to user.
+    /// </summary>
     public static void Show(List<Customer> customers)
     {
         if (customers.Count == 0) ConsoleWrapper.WriteLine("Empty", ConsoleColor.DarkYellow);

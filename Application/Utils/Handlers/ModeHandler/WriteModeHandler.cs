@@ -6,6 +6,9 @@ namespace Application.Utils.Handlers.ModeHandler;
 
 public static class WriteModeHandler
 {
+    /// <summary>
+    /// Returns enum option of user's choice.
+    /// </summary>
     public static WriteMode Get()
     {
         ConsoleWrapper.WriteLine("rewrite | new file");

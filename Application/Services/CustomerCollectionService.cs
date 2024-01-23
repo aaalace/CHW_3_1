@@ -7,11 +7,17 @@ using UI;
 
 namespace Application.Services;
 
+/// <summary>
+/// "Head" of each created collections. Completes tasks from controller.
+/// </summary>
 public class CustomerCollectionService : IDisposable
 {
     private readonly CustomerCollection _collection = new();
     private string _initPath = string.Empty;
     
+    /// <summary>
+    /// Read new json.
+    /// </summary>
     public void ReadService()
     {
         ConsoleWrapper.WriteLine("Choose read mode:");
@@ -22,6 +28,9 @@ public class CustomerCollectionService : IDisposable
         DataShower.Show(_collection.Data);
     }
     
+    /// <summary>
+    /// Filter collection.
+    /// </summary>
     public void FilterService()
     {
         ConsoleWrapper.WriteLine("Choose filter field:");
@@ -35,6 +44,9 @@ public class CustomerCollectionService : IDisposable
         DataShower.Show(_collection.Data);
     }
     
+    /// <summary>
+    /// Sort collection.
+    /// </summary>
     public void SortService()
     {
         ConsoleWrapper.WriteLine("Choose sort field:");
@@ -48,6 +60,9 @@ public class CustomerCollectionService : IDisposable
         DataShower.Show(_collection.Data);
     }
     
+    /// <summary>
+    /// Save collection in new/opened file.
+    /// </summary>
     public void WriteService()
     {
         ConsoleWrapper.WriteLine("Choose write mode:");

@@ -6,6 +6,9 @@ namespace Application.Utils.Handlers.MenuHandler;
 
 public static class MenuOptionHandler
 {
+    /// <summary>
+    /// Returns enum option of user's choice.
+    /// </summary>
     public static MenuOption Get()
     {
         var s = ConsoleWrapper.ReadLine();

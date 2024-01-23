@@ -1,5 +1,8 @@
 ﻿namespace Core.Models;
 
+/// <summary>
+/// Model for json object.
+/// </summary>
 public class Customer : IDisposable
 {
     public readonly int id;

@@ -28,6 +28,9 @@ public static class SortOrderHandler
         return OrderHelper();
     }
 
+    /// <summary>
+    /// Returns order from user to sort by.
+    /// </summary>
     private static SortOrder OrderHelper()
     {
         string? s = ConsoleWrapper.ReadLine();

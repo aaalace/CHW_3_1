@@ -5,6 +5,9 @@ namespace Infrastructure.Parsers.Json.Converters;
 
 public static class JsonDeserializer
 {
+    /// <summary>
+    /// Initial data as strings converted to list of Customer objects.
+    /// </summary>
     public static List<Customer> Deserialize(List<string> lines)
     {
         var customers = new List<Customer>();

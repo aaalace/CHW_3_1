@@ -6,6 +6,9 @@ namespace Application.Utils.Handlers.ModeHandler;
 
 public static class ReadModeHandler
 {
+    /// <summary>
+    /// Returns enum option of user's choice.
+    /// </summary>
     public static ReadMode Get()
     {
         ConsoleWrapper.WriteLine("console | file");

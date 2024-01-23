@@ -1,5 +1,8 @@
 ﻿namespace UI;
 
+/// <summary>
+/// Wrapps System.Console to easier use.
+/// </summary>
 public static class ConsoleWrapper
 {
     public static ConsoleKey GetKey()
@@ -13,7 +16,7 @@ public static class ConsoleWrapper
         return Console.ReadLine();
     }
 
-    public static void Write(string s)
+    private static void Write(string s)
     {
         Console.Write(s);
     }

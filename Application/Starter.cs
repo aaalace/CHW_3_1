@@ -7,6 +7,9 @@ namespace Application;
 
 public static class Starter
 {
+    /// <summary>
+    /// Runs new program cycle with new file (creates new controller -> service -> collection).
+    /// </summary>
     public static void Run()
     {
         var _controller = new CustomerCollectionController();

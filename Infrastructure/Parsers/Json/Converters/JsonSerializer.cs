@@ -6,6 +6,9 @@ public static class JsonSerializer
 {
     private const char q = '"';
 
+    /// <summary>
+    /// List of Customer objects converted to list of lines to be written to file.
+    /// </summary>
     public static List<string> Serialize(List<Customer> customers)
     {
         var lines = new List<string>();

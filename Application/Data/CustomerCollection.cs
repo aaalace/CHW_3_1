@@ -2,6 +2,10 @@
 
 namespace Application.Data;
 
+/// <summary>
+/// Collection of current data.
+/// (saves in service)
+/// </summary>
 public class CustomerCollection : IDisposable
 {
     public List<Customer> Data { get; set; } = new();

@@ -8,6 +8,12 @@ namespace Infrastructure.Parsers.Json;
 
 public static class JsonParser
 {
+    /// <summary>
+    /// Calls variants of reading data.
+    /// </summary>
+    /// <param name="mode">Mode of reading data.</param>
+    /// <param name="initPath">Path which was opened by user at start of new program cycle</param>
+    /// <returns></returns>
     public static List<Customer> ReadJson(ReadMode mode, ref string initPath)
     {
         var lines = mode switch
@@ -22,6 +28,12 @@ public static class JsonParser
         return customerCollection;
     }
 
+    /// <summary>
+    /// Calls variants of saving data.
+    /// </summary>
+    /// <param name="customerCollection">Collection to save in json format.</param>
+    /// <param name="mode">Mode of saving data.</param>
+    /// <param name="initPath">Path which was opened by user at start of new program cycle</param>
     public static void WriteJson(List<Customer> customerCollection, WriteMode mode, in string initPath)
     {
         var lines = JsonSerializer.Serialize(customerCollection);

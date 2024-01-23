@@ -6,6 +6,13 @@ namespace Application.Utils.Formatters;
 
 public static class FilterWS
 {
+    /// <summary>
+    /// Filters collection by mode and value.
+    /// </summary>
+    /// <param name="collection">Collection to be filtered.</param>
+    /// <param name="mode">Field of filtering.</param>
+    /// <param name="value">Value to filter by.</param>
+    /// <returns>Filtered collection.</returns>
     public static List<Customer> Filter(CustomerCollection collection, FormatMode mode, string value)
     {
         return mode switch

@@ -6,6 +6,9 @@ namespace Application.Utils.Handlers.ModeHandler;
 
 public static class FormatModeHandler
 {
+    /// <summary>
+    /// Returns enum option of user's choice.
+    /// </summary>
     public static FormatMode Get()
     {
         ConsoleWrapper.WriteLine("id | name | email | age | city | is premium | purchases amount");
